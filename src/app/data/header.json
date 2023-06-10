@@ -1,0 +1,30 @@
+{
+  "icons": [
+    {
+      "title": "search",
+      "size": 30
+    },
+    {
+      "title": "instagram",
+      "size": 30
+    }
+  ],
+  "links": [
+    {
+      "title": "Home",
+      "path": "/"
+    },
+    {
+      "title": "Gallery",
+      "path": "/gallery"
+    },
+    {
+      "title": "About",
+      "path": "/about"
+    },
+    {
+      "title": "Contact",
+      "path": "/contact"
+    }
+  ]
+}
