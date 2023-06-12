@@ -1,34 +1,38 @@
 [
   {
-    "title": "testImage",
-    "src": "/testImage.png"
+    "title": "pic1",
+    "src": "pic1.jpg"
   },
   {
-    "title": "testImage7",
-    "src": "/testImage1.png"
+    "title": "pic2",
+    "src": "pic2.jpg"
   },
   {
-    "title": "testImage1",
-    "src": "/testImage1.png"
+    "title": "pic3",
+    "src": "pic3.jpg"
   },
   {
-    "title": "testImage2",
-    "src": "/testImage2.png"
+    "title": "pic4",
+    "src": "pic4.jpg"
   },
   {
-    "title": "testImage3",
-    "src": "/testImage3.png"
+    "title": "pic5",
+    "src": "pic5.jpg"
   },
   {
-    "title": "testImage4",
-    "src": "/testImage4.png"
+    "title": "pic6",
+    "src": "pic6.jpg"
   },
   {
-    "title": "testImage5",
-    "src": "/testImage5.png"
+    "title": "pic7",
+    "src": "pic7.jpg"
   },
   {
-    "title": "testImage6",
-    "src": "/testImage6.png"
+    "title": "pic8",
+    "src": "pic8.jpg"
+  },
+  {
+    "title": "pic9",
+    "src": "pic9.jpg"
   }
 ]
