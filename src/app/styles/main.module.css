@@ -11,6 +11,7 @@
 
 .description {
   color: #555454;
+  font-family: 'Courier New', Courier, monospace;
 }
 
 .gallery {
@@ -32,5 +33,5 @@
 }
 
 .gallery div img:hover {
-  opacity: .7;
+  opacity: .9;
 }

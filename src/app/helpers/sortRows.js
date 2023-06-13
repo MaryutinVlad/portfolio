@@ -1,4 +1,4 @@
-export default function sortRows(content, options='default') {
+export default function sortRows(content, rowsInfo, options='default') {
 
   if (options === 'default') {
     return content

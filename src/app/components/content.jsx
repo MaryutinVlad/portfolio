@@ -1,5 +1,6 @@
 import styles from "../styles/main.module.css"
 import constructGrid from "../helpers/gridConstructor"
+import overlayData from "../data/overlay.json"
 
 import Image from "next/image"
 
@@ -30,13 +31,17 @@ export default async function Content({
               key={row + '' + index}
             >
               {row.map(item => (
-                <Image
+                <div
                   key={item.title}
-                  src={`/gallery/${item.src}`}
-                  width={item.adjustedWidth}
-                  height={item.columnHeight}
-                  alt={item.title}
-                />
+                  style={{ backgroundColor: `${overlayData.colors[Math.floor(Math.random() * (overlayData.colors.length - 1))]}`}}
+                >
+                  <Image
+                    src={`/gallery/${item.src}`}
+                    width={item.adjustedWidth}
+                    height={item.columnHeight}
+                    alt={item.title}
+                  />
+                </div>
               ))}
             </div>
           ))
