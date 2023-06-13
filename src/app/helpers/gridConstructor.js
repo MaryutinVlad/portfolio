@@ -29,5 +29,6 @@ export default function constructGrid(content, columnHeight, maxRowWidth) {
       data.push(row)
     }
   })
+  
   return data
 }

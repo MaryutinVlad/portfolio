@@ -6,7 +6,7 @@ export default function IconButton({
 }) {
   return (
     <Image
-      src={`/${title}.svg`}
+      src={`/icons/${title}.svg`}
       width={size}
       height={size}
       alt={title}
