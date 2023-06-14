@@ -1,4 +1,4 @@
-export default function constructGrid(content, columnHeight, maxRowWidth, gap) {
+export default function constructGrid(content, columnHeight, maxRowWidth, gap, windowWidth, widowHeight) {
 
   const data = []
   let adjustedData = []
@@ -7,19 +7,19 @@ export default function constructGrid(content, columnHeight, maxRowWidth, gap) {
   let currentRowWidth = 0
   let maxRowItems = 0
   
-  content.map((item, ind) => {
+  content.map((item, index) => {
 
-    const { width, height } = require(`#/public/gallery/${item.src}`).default
-    const ratio = width / height
+    const ratio = item.data.width / item.data.height
     const adjustedWidth = Math.floor(columnHeight * ratio)
-
+    const zoomRatio = {
+      width: item.data.width / (windowWidth * .5)
+    }
     const newItem = {
       title: item.title,
-      src: item.src,
+      src: item.data,
       adjustedWidth,
       columnHeight
     }
-
     currentRowWidth += adjustedWidth
 
     if (currentRowWidth >= maxRowWidth) {
@@ -38,7 +38,7 @@ export default function constructGrid(content, columnHeight, maxRowWidth, gap) {
 
     row.push(newItem)
 
-    if ((ind + 1) === content.length) {
+    if ((index + 1) === content.length) {
 
       if (maxRowItems < row.length) {
         maxRowItems = row.length
@@ -74,5 +74,5 @@ export default function constructGrid(content, columnHeight, maxRowWidth, gap) {
     }
   })
 
-  return adjustedData
+  return adjustedData 
 }
