@@ -15,6 +15,32 @@ export default function Content() {
   let maxGalleryWidth = 1000
   const galleryLayout = constructGrid(pictures, 300, 1000, 7)
   const [ openPopup, setOpenPopup ] = useState(false)
+  const [ imageOpened, setImageOpened] = useState(null)
+
+  const openImage = (e) => {
+    setOpenPopup(true)
+
+    const imageToOpen = galleryLayout.find(item => e.target.alt === item.title)
+    console.log(galleryLayout.find(row => row.find(item => e.target.alt === item.title)))
+    setImageOpened(imageToOpen)
+  }
+
+  const closeImage = () => {
+    setOpenPopup(false)
+    setImageOpened(null)
+  }
+
+  const closeOnScreenClick = (e) => {
+    if (e.target === e.currentTarget) {
+      setOpenPopup(false)
+      setImageOpened(null)
+    }
+  }
+
+  const importImage = (imported) => {
+    const image = require(`../../../public/gallery/${imported.src}`).default
+    return image
+  }
 
   return (
     <main className={styles.container}>
@@ -43,6 +69,7 @@ export default function Content() {
                     width={item.adjustedWidth}
                     height={item.columnHeight}
                     alt={item.title}
+                    onClick={openImage}
                   />
                 </div>
               ))}
@@ -50,6 +77,42 @@ export default function Content() {
           ))
         }
       </div>
+      {
+        openPopup && (
+          <div
+            className={styles.overlay}
+            onClick={closeOnScreenClick}
+          >
+          <div className={styles.overlay_arrow}>
+            <button type="button">
+            </button>
+          </div>
+          
+            {
+              imageOpened && (
+                <div>
+                  <Image
+                    src={`/gallery/${imageOpened.src}`}
+                    alt={imageOpened.title}
+                    width={imageOpened.adjustedWidth * 2}
+                    height={imageOpened.adjustedHeight * 2}
+                  />
+                </div>
+              )
+              
+            }
+            <div className={styles.overlay_arrow}>
+              <button type="button"></button>
+            </div>
+            <button
+              className={styles.overlay_close}
+              type="button"
+              onClick={closeImage}
+            >
+            </button>
+          </div>
+        )
+      }
     </main>
   )
 }

@@ -35,3 +35,66 @@
 .gallery div img:hover {
   opacity: .9;
 }
+
+.overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, .7);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.overlay_close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  transition: transform .3s linear;
+  background-image: url('../../../public/icons/close.svg');
+  background-size: cover;
+  background-color: transparent;
+  border: none;
+}
+
+.overlay_close:hover {
+  transition: transform .3s linear;
+  transform: scale(1.1);
+}
+
+.overlay_arrow {
+  width: 50px;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 90px 0 0 90px;
+  transition: background-color .3s linear;
+}
+
+.overlay_arrow button {
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  background-image: url('../../../public/icons/arrow.svg');
+  background-size: cover;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  border: none;
+}
+
+.overlay_arrow:hover {
+  transition: background-color .3s linear;
+  background-color: rgba(237, 233, 233, .2);
+}
+
+.overlay_arrow:first-of-type {
+  transform: rotate(180deg);
+}
