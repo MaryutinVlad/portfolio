@@ -1,0 +1,21 @@
+.gallery {
+  display: flex;
+  flex-direction: column;
+  margin: 20px auto;
+  gap: 7px;
+}
+
+.gallery div {
+  display: flex;
+  flex-direction: row;
+  gap: 7px;
+  justify-content: center;
+}
+
+.gallery div img {
+  cursor: pointer;
+}
+
+.gallery div img:hover {
+  opacity: .9;
+}

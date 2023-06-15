@@ -5,6 +5,7 @@ export default function zoomImage(image, targetHeight) {
     src: image.src,
     width: targetHeight * ratio,
     height: targetHeight,
-    alt: image.title
+    alt: image.title,
+    description: image.description
   }
 }

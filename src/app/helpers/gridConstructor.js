@@ -16,7 +16,8 @@ export default function constructGrid(content, columnHeight, maxRowWidth, gap) {
       title: item.title,
       src: item.data,
       adjustedWidth,
-      columnHeight
+      columnHeight,
+      description: item.description
     }
     currentRowWidth += adjustedWidth
 
@@ -63,7 +64,8 @@ export default function constructGrid(content, columnHeight, maxRowWidth, gap) {
             title: item.title,
             src: item.src,
             adjustedWidth: Math.floor(item.adjustedWidth * rowsRatio[ind] + gapAdjustment),
-            columnHeight: Math.floor(item.columnHeight * rowsRatio[ind] + gapAdjustment)
+            columnHeight: Math.floor(item.columnHeight * rowsRatio[ind] + gapAdjustment),
+            description: item.description
           }
 
           return newItem
