@@ -1,4 +1,4 @@
-export default function constructGrid(content, columnHeight, maxRowWidth, gap, windowWidth, widowHeight) {
+export default function constructGrid(content, columnHeight, maxRowWidth, gap) {
 
   const data = []
   let adjustedData = []
@@ -11,9 +11,7 @@ export default function constructGrid(content, columnHeight, maxRowWidth, gap, w
 
     const ratio = item.data.width / item.data.height
     const adjustedWidth = Math.floor(columnHeight * ratio)
-    const zoomRatio = {
-      width: item.data.width / (windowWidth * .5)
-    }
+    
     const newItem = {
       title: item.title,
       src: item.data,

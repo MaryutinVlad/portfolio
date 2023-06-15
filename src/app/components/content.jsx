@@ -6,6 +6,7 @@ import styles from "../styles/main.module.css"
 
 import constructGrid from "../helpers/gridConstructor"
 import imageImporter from "../helpers/imageImporter"
+import zoomImage from "../helpers/zoomImage"
 
 import overlayData from "../data/overlay.json"
 import texts from '../data/mainTexts.json'
@@ -18,7 +19,7 @@ export default function Content() {
   let maxGalleryWidth = 1000
 
   const images = imageImporter(pictures)
-  const galleryLayout = constructGrid(images, 300, 1000, 7, window.innerWidth, window.innerHeight)
+  const galleryLayout = constructGrid(images, 300, 1000, 7)
   const adjustedImages = galleryLayout.flat(1)
   const [ openPopup, setOpenPopup ] = useState(false)
   const [ imageOpened, setImageOpened] = useState(null)
@@ -26,41 +27,20 @@ export default function Content() {
   const openImage = (e) => {
     setOpenPopup(true)
     const imageToOpen = images.findIndex(item => e.target.alt === item.title)
-    setImageOpened({
-      src: images[imageToOpen].data,
-      width: e.target.width * 2,
-      height: e.target.height * 2,
-      alt: images[imageToOpen].title
-    })
+    setImageOpened(zoomImage(adjustedImages[imageToOpen], window.innerHeight * .8))
+  }
+
+  function switchImage(direction) {
+    let imageToOpen = (adjustedImages.findIndex(item => imageOpened.alt === item.title) + direction) % images.length
+    if (imageToOpen < 0) {
+      imageToOpen = images.length - 1
+    }
+    setImageOpened(zoomImage(adjustedImages[imageToOpen], window.innerHeight * .8))
   }
 
   const closeImage = () => {
     setOpenPopup(false)
     setImageOpened(null)
-  }
-
-  const toNextImage = () => {
-    const imageToOpen = (adjustedImages.findIndex(item => imageOpened.alt === item.title) + 1) % images.length
-    setImageOpened({
-      src: images[imageToOpen].data,
-      width: adjustedImages[imageToOpen].adjustedWidth * 2,
-      height: adjustedImages[imageToOpen].adjustedHeight * 2,
-      alt: images[imageToOpen].title
-    })
-    console.log()
-  }
-
-  const toPreviousImage = () => {
-    let imageToOpen = (adjustedImages.findIndex(item => imageOpened.alt === item.title) - 1) % images.length
-    if (imageToOpen < 0) {
-      imageToOpen = images.length - 1
-    }
-    setImageOpened({
-      src: images[imageToOpen].data,
-      width: adjustedImages[imageToOpen].adjustedWidth * 2,
-      height: adjustedImages[imageToOpen].adjustedHeight * 2,
-      alt: images[imageToOpen].title
-    })
   }
 
   const closeOnScreenClick = (e) => {
@@ -112,7 +92,7 @@ export default function Content() {
             className={styles.overlay}
             onClick={closeOnScreenClick}
           >
-          <div className={styles.overlay_arrow} onClick={toPreviousImage}>
+          <div className={styles.overlay_arrow} onClick={() => switchImage(-1)}>
             <button type="button">
             </button>
           </div>
@@ -130,7 +110,7 @@ export default function Content() {
               )
               
             }
-            <div className={styles.overlay_arrow} onClick={toNextImage}>
+            <div className={styles.overlay_arrow} onClick={() => switchImage(1)}>
               <button type="button">
               </button>
             </div>
