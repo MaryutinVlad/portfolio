@@ -23,10 +23,7 @@ export default function Gallery({
               key={row + '' + index}
             >
               {row.map(item => (
-                <div
-                  key={item.title}
-                  //style={{ backgroundColor: `${overlayData.colors[Math.floor(Math.random() * (overlayData.colors.length - 1))]}`}}
-                >
+                <div key={item.title}>
                   <Image
                     src={item.src}
                     width={item.adjustedWidth}

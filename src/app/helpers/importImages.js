@@ -1,4 +1,4 @@
-export default function imageImporter(content) {
+export default function imageImporter(content, limit) {
   const images = []
 
   content.map(item =>

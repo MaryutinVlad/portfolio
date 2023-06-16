@@ -1,0 +1,80 @@
+{
+  "painting": [
+    {
+      "title": "pic1",
+      "src": "pic1.jpg",
+      "description": "description1 for image description for image description for image description for image description for image"
+    },
+    {
+      "title": "pic2",
+      "src": "pic2.jpg",
+      "description": "description2 for image description for image description for image description for image description for image"
+    },
+    {
+      "title": "pic3",
+      "src": "pic3.jpg",
+      "description": "description3 for image description for image description for image description for image description for image"
+    }
+  ],
+  "enamels": [
+    {
+      "title": "pic4",
+      "src": "pic4.jpg",
+      "description": "description4 for image description for image description for image description for image description for image"
+    },
+    {
+      "title": "pic5",
+      "src": "pic5.jpg",
+      "description": "description5 for image description for image description for image description for image description for image"
+    },
+    {
+      "title": "pic6",
+      "src": "pic6.jpg",
+      "description": "description6 for image description for image description for image description for image description for image"
+    },
+    {
+      "title": "pic7",
+      "src": "pic7.jpg",
+      "description": "description7 for image description for image description for image description for image description for image"
+    },
+    {
+      "title": "pic8",
+      "src": "pic8.jpg",
+      "description": "description8 for image description for image description for image description for image description for image"
+    }
+  ],
+  "ceramics": [
+    {
+      "title": "pic9",
+      "src": "pic9.jpg",
+      "description": "description9 for image description for image description for image description for image description for image"
+    },
+    {
+      "title": "pic10",
+      "src": "pic10.jpg",
+      "description": "description10 for image description for image description for image description for image description for image"
+    },
+    {
+      "title": "pic11",
+      "src": "pic11.jpg",
+      "description": "description11 for image description for image description for image description for image description for image"
+    },
+    {
+      "title": "pic12",
+      "src": "pic12.jpg",
+      "description": "description12 for image description for image description for image description for image description for image"
+    }
+  ],
+  "teaching": [
+    {
+      "title": "pic13",
+      "src": "pic13.jpg",
+      "description": "description13 for image description for image description for image description for image description for image"
+    },
+    {
+      "title": "pic14",
+      "src": "pic14.jpg",
+      "description": "description14 for image description for image description for image description for image description for image"
+    }
+  ]
+}

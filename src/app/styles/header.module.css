@@ -9,12 +9,13 @@
   font-size: 26px;
   cursor: pointer;
   z-index: 1;
+  font-family: 'mermaid';
 }
 
 .navigation {
   display: flex;
   flex-direction: row;
-  gap: 15px;
+  gap: 20px;
   margin: 0 auto 0 70px;
   z-index: 1;
 }
@@ -29,7 +30,7 @@
   text-decoration: none;
   font-size: 20px;
   padding-bottom: 5px;
-  font-family: 'Courier New', Courier, monospace;
+  font-weight: 600;
 }
 
 .link hr {

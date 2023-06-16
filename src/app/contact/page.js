@@ -24,7 +24,9 @@ export default function Contact() {
         Or please complete the enquiry bellow 
       </p>
       <form
-        onSubmit={sendMessage}
+        action="mailto: louietrueman@gmail.com"
+        method="POST"
+        encType="text/plain"
       >
         <h3>
           Name *

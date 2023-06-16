@@ -1,8 +1,0 @@
-@keyframes buttonHover {
-  from {
-    background-image: radial-gradient(#4b4b4b, #4b4b4b);
-  }
-  to {
-    background-image: radial-gradient(#bababa, #4b4b4b);
-  }
-}
