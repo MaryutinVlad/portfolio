@@ -6,39 +6,6 @@ export default function constructGrid(content, columnHeight, maxRowWidth, gap) {
   let row = []
   let currentRowWidth = 0
   let maxRowItems = 0
-/*
-  for (let genre in gallery) {
-    for (let ind = 0; ind < genre.length; ind ++) {
-
-      const image = genre[ind]
-      const ratio = image.src.width / image.src.height
-      const adjustedWidth = Math.floor(columnHeight * ratio)
-
-      const adjustedImage = {
-        ...image,
-        adjustedWidth,
-        columnHeight
-      }
-
-      currentRowWidth += adjustedWidth
-
-      if (currentRowWidth >= maxRowWidth) {
-
-        currentRowWidth -= adjustedWidth
-        rowsWidth.push(currentRowWidth)
-        data.push(row)
-
-        if (maxRowItems < row.length) {
-          maxRowItems = row.length
-        }
-
-        row = []
-        currentRowWidth = adjustedWidth
-      }
-
-      row.push(adjustedImage)
-    }
-  }*/
   
   content.map((item, index) => {
 

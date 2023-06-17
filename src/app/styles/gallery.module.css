@@ -5,17 +5,17 @@
   gap: 7px;
 }
 
-.gallery div {
+.row {
   display: flex;
   flex-direction: row;
   gap: 7px;
   justify-content: center;
 }
 
-.gallery div img {
+.image {
   cursor: pointer;
 }
 
-.gallery div img:hover {
+.image:hover {
   opacity: .9;
 }
