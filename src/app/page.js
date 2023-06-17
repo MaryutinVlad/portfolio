@@ -1,13 +1,17 @@
 "use client"
 
-import React from "react"
 import dynamic from "next/dynamic"
 
-import styles from "./styles/main.module.css"
+import styles from "./styles/home.module.css"
 
 import texts from './data/mainTexts.json'
+import imagesData from "./data/gallery.json"
+
+import importImages from "./helpers/importImages"
 
 export default function Home() {
+
+  const images = importImages(imagesData, true, 2)
 
   const Gallery = dynamic(
     () => {
@@ -24,7 +28,11 @@ export default function Home() {
       <p className={styles.description}>
         {texts.description}
       </p>
-      <Gallery/>
+      <Gallery
+        images={images}
+        rowHeight={300}
+        widthFactor={.578}
+      />
     </main>
   )
 }

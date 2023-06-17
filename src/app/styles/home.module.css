@@ -15,5 +15,11 @@
 .description {
   color: #555454;
   letter-spacing: .5px;
-  font-size: 18px;
+  line-height: 1.3em;
+  font-size: 19px;
+  font-family: 'raleway-regular';
+}
+
+.description::first-letter {
+  margin-left: 10px;
 }

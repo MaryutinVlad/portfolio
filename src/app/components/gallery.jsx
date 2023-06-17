@@ -7,19 +7,19 @@ import styles from "../styles/gallery.module.css"
 
 import ImagePopup from "./imagePopup"
 
-import imagesData from "../data/gallery.json"
-
-import importImages from "../helpers/importImages"
 import constructGallery from "../helpers/constructGallery"
 import zoomImage from "../helpers/zoomImage"
 
-export default function Gallery() {
+export default function Gallery({
+  images,
+  rowHeight,
+  widthFactor
+}) {
 
   const [ openPopup, setOpenPopup ] = useState(false)
   const [ imageOpened, setImageOpened ] = useState(null)
 
-  const images = importImages(imagesData, true, 2)
-  const galleryLayout = constructGallery(images, 300, window.innerWidth * .578, 7)
+  const galleryLayout = constructGallery(images, rowHeight, window.innerWidth * widthFactor, 7)
   const adjustedImages = galleryLayout.flat(1)
 
   const openImage = (e) => {

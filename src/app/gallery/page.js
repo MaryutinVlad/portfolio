@@ -1,8 +1,63 @@
+"use client"
 
+import dynamic from "next/dynamic"
+
+import imagesData from "../data/gallery.json"
+
+import importImages from "../helpers/importImages"
+import constructGallery from "../helpers/constructGallery"
+
+import { title } from "../styles/home.module.css"
+import styles from "../styles/galleryPage.module.css"
 
 export default function Gallery() {
 
+  const genres = importImages(imagesData, false)
+
+  const Gallery = dynamic(
+    () => {
+      return import("../components/gallery")
+    },
+    { ssr: false }
+  )
+
   return (
-    <main></main>
+    <main>
+      <h2
+        className={title}
+        style={{
+          marginLeft: '20px',
+          marginTop: '30px'
+        }}
+      >
+        Works
+      </h2>
+      <div className={styles.genres}>
+        {
+          Object.keys(genres).map((genre) => (
+            <div
+              key={genre}
+              className={styles.genre_container}
+            >
+              <p
+                className={title}
+                style={{
+                  textAlign: 'center',
+                  marginBottom: 0,
+                  letterSpacing: '6px'
+                }}
+              >
+                {genre.charAt(0).toUpperCase() + genre.slice(1)}
+              </p>
+              <Gallery
+                images={genres[genre]}
+                rowHeight={300}
+                widthFactor={1}
+              />
+            </div>
+          ))
+        }
+      </div>
+    </main>
   )
 }

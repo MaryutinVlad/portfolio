@@ -8,6 +8,11 @@
   src: url('../../../public//fonts/Raleway-Light.ttf');
 }
 
+@font-face {
+  font-family: 'raleway-regular';
+  src: url('../../../public/fonts/Raleway-Regular.ttf');
+}
+
 :root {
   background-color: #e9e9e9;
   color: #2d2d2d;
