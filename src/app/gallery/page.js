@@ -5,7 +5,6 @@ import dynamic from "next/dynamic"
 import imagesData from "../data/gallery.json"
 
 import importImages from "../helpers/importImages"
-import constructGallery from "../helpers/constructGallery"
 
 import { title } from "../styles/home.module.css"
 import styles from "../styles/galleryPage.module.css"
@@ -52,7 +51,7 @@ export default function Gallery() {
               <Gallery
                 images={genres[genre]}
                 rowHeight={300}
-                widthFactor={1}
+                widthFactor={.9}
               />
             </div>
           ))

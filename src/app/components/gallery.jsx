@@ -48,10 +48,12 @@ export default function Gallery({
     }
   }
 
+  console.log(galleryLayout)
+
   return (
     <div
         className={styles.gallery}
-        style={{ width: `${window.innerWidth * .578}px`}}
+        style={{ width: `${window.innerWidth * widthFactor}px`}}
       >
         {
           galleryLayout.map((row, index) => (
@@ -64,10 +66,11 @@ export default function Gallery({
                   key={item.title}
                   className={styles.image}
                   src={item.src}
-                  width={item.adjustedWidth}
-                  height={item.columnHeight}
+                  width={0}
+                  height={0}
                   alt={item.title}
                   onClick={openImage}
+                  style={{ width: item.relativeWidth, height: 'auto' }}
                 />
               ))}
             </div>

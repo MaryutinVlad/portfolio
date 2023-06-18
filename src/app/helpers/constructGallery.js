@@ -45,9 +45,8 @@ export default function constructGrid(content, columnHeight, maxRowWidth, gap) {
 
       rowsWidth.push(currentRowWidth)
 
-      const widestRow = Math.max(...rowsWidth)
       const rowsRatio = rowsWidth.map(rowWidth => 
-        widestRow / rowWidth
+        maxRowWidth / rowWidth
       )
 
       data.push(row)
@@ -64,8 +63,9 @@ export default function constructGrid(content, columnHeight, maxRowWidth, gap) {
             title: item.title,
             src: item.src,
             adjustedWidth: Math.floor(item.adjustedWidth * rowsRatio[ind] + gapAdjustment),
-            columnHeight: Math.floor(item.columnHeight * rowsRatio[ind] + gapAdjustment),
-            description: item.description
+            //columnHeight: Math.floor(item.columnHeight * rowsRatio[ind] + gapAdjustment),        unnecessary since relativeWidth added
+            description: item.description,
+            relativeWidth: `${((item.adjustedWidth * rowsRatio[ind] + gapAdjustment) / maxRowWidth) * 100}%`
           }
 
           return newItem
@@ -73,6 +73,7 @@ export default function constructGrid(content, columnHeight, maxRowWidth, gap) {
       })
     }
   })
+  console.log(adjustedData[0][0])
 
   return adjustedData 
 }

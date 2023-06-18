@@ -64,6 +64,8 @@
   flex-direction: row;
   gap: 20px;
   justify-content: space-between;
+  margin-top: 20px;
+  align-items: center;
   z-index: 1;
 }
 
