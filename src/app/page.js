@@ -31,7 +31,7 @@ export default function Home() {
       <Gallery
         images={images}
         rowHeight={300}
-        widthFactor={.578}
+        widthFactor={1}
       />
     </main>
   )

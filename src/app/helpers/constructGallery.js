@@ -1,4 +1,4 @@
-export default function constructGrid(content, columnHeight, maxRowWidth, gap) {
+export default function constructGrid(content, columnHeight, galleryWidth, gap) {
 
   const data = []
   let adjustedData = []
@@ -16,12 +16,12 @@ export default function constructGrid(content, columnHeight, maxRowWidth, gap) {
       title: item.title,
       src: item.data,
       adjustedWidth,
-      columnHeight,
       description: item.description
     }
+
     currentRowWidth += adjustedWidth
 
-    if (currentRowWidth >= maxRowWidth) {
+    if (currentRowWidth >= galleryWidth) {
 
       currentRowWidth -= adjustedWidth
       rowsWidth.push(currentRowWidth)
@@ -46,26 +46,21 @@ export default function constructGrid(content, columnHeight, maxRowWidth, gap) {
       rowsWidth.push(currentRowWidth)
 
       const rowsRatio = rowsWidth.map(rowWidth => 
-        maxRowWidth / rowWidth
+        galleryWidth / rowWidth
       )
 
       data.push(row)
 
       adjustedData = data.map((row, ind) => {
-        let gapAdjustment = 0
-        if (maxRowItems > row.length) {
-          gapAdjustment = ((maxRowItems - row.length) * gap) / row.length
-        }
+        const gapAdjustment = ((row.length - 1) * (gap)) / row.length
 
         return row.map(item => {
 
           const newItem = {
             title: item.title,
             src: item.src,
-            adjustedWidth: Math.floor(item.adjustedWidth * rowsRatio[ind] + gapAdjustment),
-            //columnHeight: Math.floor(item.columnHeight * rowsRatio[ind] + gapAdjustment),        unnecessary since relativeWidth added
             description: item.description,
-            relativeWidth: `${((item.adjustedWidth * rowsRatio[ind] + gapAdjustment) / maxRowWidth) * 100}%`
+            relativeWidth: `${((item.adjustedWidth * rowsRatio[ind] - gapAdjustment) / galleryWidth) * 100}%`
           }
 
           return newItem
@@ -73,7 +68,6 @@ export default function constructGrid(content, columnHeight, maxRowWidth, gap) {
       })
     }
   })
-  console.log(adjustedData[0][0])
 
   return adjustedData 
 }

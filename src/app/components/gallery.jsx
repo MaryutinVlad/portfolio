@@ -48,8 +48,6 @@ export default function Gallery({
     }
   }
 
-  console.log(galleryLayout)
-
   return (
     <div
         className={styles.gallery}

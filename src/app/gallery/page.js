@@ -41,9 +41,8 @@ export default function Gallery() {
               <p
                 className={title}
                 style={{
-                  textAlign: 'center',
-                  marginBottom: 0,
-                  letterSpacing: '6px'
+                  letterSpacing: '6px',
+                  margin: '20px auto 0'
                 }}
               >
                 {genre.charAt(0).toUpperCase() + genre.slice(1)}
