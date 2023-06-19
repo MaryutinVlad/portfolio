@@ -18,14 +18,17 @@ export default function Gallery({
 
   const [ openPopup, setOpenPopup ] = useState(false)
   const [ imageOpened, setImageOpened ] = useState(null)
+  const [ hasContent, setHasContent ] = useState(false)
 
   const galleryLayout = constructGallery(images, rowHeight, window.innerWidth * widthFactor, 7)
   const adjustedImages = galleryLayout.flat(1)
 
-  const openImage = (e) => {
+  const openImage = ({ target }) => {
+    const { alt, width, height} = target
     setOpenPopup(true)
-    const imageToOpen = images.findIndex(item => e.target.alt === item.title)
-    setImageOpened(zoomImage(adjustedImages[imageToOpen], window.innerHeight * .8))
+    const imageToOpen = images.findIndex(item => alt === item.title)
+    setImageOpened(zoomImage(adjustedImages[imageToOpen], window.innerHeight * .8, width / height))
+    setHasContent(true)
   }
 
   function switchImage(direction) {
@@ -41,10 +44,15 @@ export default function Gallery({
     setImageOpened(null)
   }
 
-  const closeOnScreenClick = (e) => {
-    if (e.target === e.currentTarget) {
-      setOpenPopup(false)
-      setImageOpened(null)
+  const closeImageOnButton = () => {
+    setHasContent(false)
+    setTimeout(closeImage, 250)
+  }
+
+  const closeOnScreenClick = ({ target, currentTarget }) => {
+    if (target === currentTarget) {
+      setHasContent(false)
+      setTimeout(closeImage, 250)
     }
   }
 
@@ -73,17 +81,17 @@ export default function Gallery({
               ))}
             </div>
           ))
-        }
-        {
-        openPopup && (
-          <ImagePopup
-            imageOpened={imageOpened}
-            onSwitchImage={switchImage}
-            onCloseImage={closeImage}
-            onScreenClick={closeOnScreenClick}
-          />
-        )
-      }
+        }<div style={hasContent ? { opacity: '1', transition: 'opacity .25s ease-in'} : {opacity: '0', transition: 'opacity .25s linear'}}>
+          {
+          openPopup && (
+            <ImagePopup
+              imageOpened={imageOpened}
+              onSwitchImage={switchImage}
+              onCloseImage={closeImageOnButton}
+              onScreenClick={closeOnScreenClick}
+            />
+          )
+        }</div>
       </div>
   )
 }

@@ -1,5 +1,4 @@
-export default function zoomImage(image, targetHeight) {
-  const ratio = image.adjustedWidth / image.adjusetedHeight
+export default function zoomImage(image, targetHeight, ratio) {
 
   return {
     src: image.src,

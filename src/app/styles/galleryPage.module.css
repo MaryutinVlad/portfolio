@@ -8,6 +8,21 @@
 .genre_container {
   width: 100%;
   display: flex;
-  flex-direction: row;
   flex-wrap: wrap;
+  max-height: 1000px;
+  overflow: hidden;
+  transition: max-height .8s ease-in-out;
+}
+
+.genre_container_collapsed {
+  transition: max-height .8s ease-in-out;
+  max-height: 64px;
+}
+
+.genre_title {
+  letter-spacing: '6px';
+  margin: '20px auto 0';
+  font-size: 26px;
+  font-weight: 600;
+  cursor: n-resize;
 }

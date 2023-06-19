@@ -32,23 +32,18 @@ export default function ImagePopup({
       >
         <button type="button"></button>
       </div>   
-      {
-        imageOpened && (
-          <div
-            className={styles.image_container}
-          >
-            <Image
-              src={imageOpened.src}
-              alt={imageOpened.alt}
-              width={imageOpened.width}
-              height={imageOpened.height}
-            />
-            <p>
-              {imageOpened.description}
-            </p>
-          </div>
-        )
-      }
+        <div className={styles.image_container}>
+          <Image
+            src={imageOpened.src}
+            alt={imageOpened.alt}
+            width={imageOpened.width}
+            height={imageOpened.height}
+          />
+          <p style={{ width: `${imageOpened.width}px` }}>
+            {imageOpened.description}
+          </p>
+        </div>
+       
       <div
         className={styles.overlay_arrow}
         onClick={() => switchImage(1)}

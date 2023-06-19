@@ -1,9 +1,11 @@
 'use client'
 
 import { useRouter } from "next/navigation";
+import { useState } from "react";
 
 import NavigationLink from "./navigation-link";
 import IconButton from "./icon-button"
+import Share from "./share";
 
 import data from "../data/header.json"
 
@@ -11,9 +13,14 @@ import { header, navigation, buttons } from "../styles/header.module.css"
 
 export default function Header(){
 
+  const [ isPopupOpened, setIsPopupOpened ] = useState(false)
+
   const router = useRouter()
 
   const toHomePage = () => router.push('/')
+  const openPopup = () => {
+    setIsPopupOpened(true)
+  }
 
   return (
     <header className={header}>
@@ -38,6 +45,7 @@ export default function Header(){
           />
         )}
       </div>
+      <Share isOpened={isPopupOpened}/>
     </header>
   )
 }

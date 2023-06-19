@@ -13,6 +13,10 @@ export default function Gallery() {
 
   const genres = importImages(imagesData, false)
 
+  const resizeGenre = (e) => {
+    e.target.closest('div').classList.toggle(styles.genre_container_collapsed)
+  }
+
   const Gallery = dynamic(
     () => {
       return import("../components/gallery")
@@ -39,11 +43,12 @@ export default function Gallery() {
               className={styles.genre_container}
             >
               <p
-                className={title}
+                className={styles.genre_title}
                 style={{
                   letterSpacing: '6px',
                   margin: '20px auto 0'
                 }}
+                onClick={resizeGenre}
               >
                 {genre.charAt(0).toUpperCase() + genre.slice(1)}
               </p>
