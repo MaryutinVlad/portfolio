@@ -3,13 +3,13 @@
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 
-import NavigationLink from "./navigation-link";
-import IconButton from "./icon-button"
-import Share from "./share";
+import NavigationLink from "./NavigationLink";
+import ShareButtons from "./ShareButtons";
+import Share from "./SharePopup"
 
 import data from "../data/header.json"
 
-import { header, navigation, buttons } from "../styles/header.module.css"
+import { header, navigation } from "../styles/header.module.css"
 
 export default function Header(){
 
@@ -36,15 +36,10 @@ export default function Header(){
           />
         )}
       </nav>
-      <div className={buttons}>
-        {data.icons.map(({title, size}) => 
-          <IconButton
-            key={title}
-            title={title}
-            size={size}
-          />
-        )}
-      </div>
+      <ShareButtons
+        size={[30, 37]}
+        gap={20}
+      />
       <Share isOpened={isPopupOpened}/>
     </header>
   )

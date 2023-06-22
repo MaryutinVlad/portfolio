@@ -5,7 +5,7 @@ import Image from "next/image"
 import React, { useState } from "react"
 import styles from "../styles/gallery.module.css"
 
-import ImagePopup from "./imagePopup"
+import ImagePopup from "./ImagePopup"
 
 import constructGallery from "../helpers/constructGallery"
 import zoomImage from "../helpers/zoomImage"

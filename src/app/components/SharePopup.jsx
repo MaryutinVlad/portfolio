@@ -43,7 +43,6 @@ export default function Share({onScreenClick, isOpened}) {
           <div className={styles.socials}>
             {
               socials.map((item) => { const image = require(`../../../public/icons/${item.src}`).default
-              console.log(image)
               return(
                 <Link
                   key={item.title}

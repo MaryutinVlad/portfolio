@@ -13,7 +13,7 @@ export default function Home() {
 
   const images = importImages(imagesData, true, 2)
 
-  const Gallery = dynamic(
+  const GalleryLayout = dynamic(
     () => {
       return import("./components/gallery")
     },
@@ -28,7 +28,7 @@ export default function Home() {
       <p className={styles.description}>
         {texts.description}
       </p>
-      <Gallery
+      <GalleryLayout
         images={images}
         rowHeight={300}
         widthFactor={1}
