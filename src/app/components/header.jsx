@@ -1,11 +1,9 @@
 'use client'
 
-import { useRouter } from "next/navigation";
-import { useState } from "react";
+import { useRouter } from "next/navigation"
 
-import NavigationLink from "./NavigationLink";
-import ShareButtons from "./ShareButtons";
-import Share from "./SharePopup"
+import NavigationLink from "./NavigationLink"
+import ShareButtons from "./ShareButtons"
 
 import data from "../data/header.json"
 
@@ -13,14 +11,9 @@ import { header, navigation } from "../styles/header.module.css"
 
 export default function Header(){
 
-  const [ isPopupOpened, setIsPopupOpened ] = useState(false)
-
   const router = useRouter()
 
   const toHomePage = () => router.push('/')
-  const openPopup = () => {
-    setIsPopupOpened(true)
-  }
 
   return (
     <header className={header}>
@@ -40,7 +33,6 @@ export default function Header(){
         size={[30, 37]}
         gap={20}
       />
-      <Share isOpened={isPopupOpened}/>
     </header>
   )
 }

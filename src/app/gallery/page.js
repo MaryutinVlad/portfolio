@@ -17,9 +17,9 @@ export default function Gallery() {
     e.target.closest('div').classList.toggle(styles.genre_container_collapsed)
   }
 
-  const GalleryLayout = dynamic(
+  const Gallery = dynamic(
     () => {
-      return import("../components/gallery")
+      return import("../components/Images")
     },
     { ssr: false }
   )
@@ -52,7 +52,7 @@ export default function Gallery() {
               >
                 {genre.charAt(0).toUpperCase() + genre.slice(1)}
               </p>
-              <GalleryLayout
+              <Gallery
                 images={genres[genre]}
                 rowHeight={300}
                 widthFactor={.9}

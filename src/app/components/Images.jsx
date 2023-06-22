@@ -3,14 +3,14 @@
 import Image from "next/image"
 
 import React, { useState } from "react"
-import styles from "../styles/gallery.module.css"
+import styles from "../styles/images.module.css"
 
 import ImagePopup from "./ImagePopup"
 
 import constructGallery from "../helpers/constructGallery"
 import zoomImage from "../helpers/zoomImage"
 
-export default function Gallery({
+export default function Images({
   images,
   rowHeight,
   widthFactor

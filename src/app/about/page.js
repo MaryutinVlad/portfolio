@@ -4,7 +4,7 @@ import imagesData from "../data/gallery.json"
 
 import importImages from "../helpers/importImages"
 
-import Gallery from "../components/gallery"
+import Gallery from "../components/Images"
 
 export default async function About() {
 

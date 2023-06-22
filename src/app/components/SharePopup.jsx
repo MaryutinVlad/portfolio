@@ -6,7 +6,7 @@ import Link from "next/link"
 
 import { useState } from "react"
 
-export default function Share({onScreenClick, isOpened}) {
+export default function SharePopup({onScreenClick, isOpened}) {
 
   const [ isCopied, setIsCopied ] = useState(false)
 
@@ -20,7 +20,7 @@ export default function Share({onScreenClick, isOpened}) {
     <div
       className={styles.overlay}
       onClick={closePopup}
-      style={!isOpened ? { visibility: 'hidden', opacity: 0, transition: 'opacity 1s linear' } : { visibility: 'visible', opacity: 1, transition: 'opacity 1s linear' }}
+      //style={!isOpened ? { visibility: 'hidden', opacity: 0, transition: 'opacity 1s linear' } : { visibility: 'visible', opacity: 1, transition: 'opacity 1s linear' }}
       >
         <div className={styles.container}>
           <p className={styles.title}>
