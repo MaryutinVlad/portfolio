@@ -60,6 +60,8 @@
   margin-top: 5px;
   width: 15px;
   transform: rotate(90deg);
+  border-top: 1px solid rgb(23, 22, 22);
+  border-bottom: none;
 }
 
 .divider:last-of-type {

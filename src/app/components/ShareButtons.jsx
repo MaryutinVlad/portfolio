@@ -14,9 +14,16 @@ export default function ShareButtons({
 }) {
 
   const [ isPopupOpen, setIsPopupOpen ] = useState(false)
+  const [ isMounted, setIsMounted ] = useState(false)
 
   const openPopup = () => {
     setIsPopupOpen(true)
+    setIsMounted(true)
+  }
+
+  const closePopup = () => {
+    setIsMounted(false)
+    setTimeout(() => setIsPopupOpen(false), 250)
   }
 
   return (
@@ -44,9 +51,11 @@ export default function ShareButtons({
           />
         </a>
       </div>
-      { isPopupOpen && (
-        <SharePopup />
-      )}
+      <div style={isMounted ? { opacity: '1', transition: 'opacity .25s ease-in'} : {opacity: '0', transition: 'opacity .25s linear'}}>
+        { isPopupOpen && (
+          <SharePopup onScreenClick={closePopup}/>
+        )}
+      </div>
     </>
   )
 }
