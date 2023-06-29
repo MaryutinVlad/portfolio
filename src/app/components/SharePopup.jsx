@@ -2,7 +2,6 @@ import styles from "../styles/share.module.css"
 
 import socials from "../data/socials.json"
 
-import Link from "next/link"
 import Image from "next/image"
 
 import { useState } from "react"
@@ -52,8 +51,8 @@ export default function SharePopup({onScreenClick, isOpened}) {
                     key={item.title}
                     src={`/icons/${item.src}`}
                     alt={item.title}
-                    width={50}
-                    height={50}
+                    width={55}
+                    height={55}
                   />
                 )
               })
