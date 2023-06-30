@@ -1,3 +1,13 @@
+@keyframes disappear {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
 .overlay {
   position: fixed;
   top: 0;
@@ -46,15 +56,26 @@
 }
 
 .link button {
+  position: relative;
   width: 33px;
   height: 33px;
   background-image: url('../../../public/icons/copy.svg');
   background-size: 90%;
   background-position: center;
-  background-color: #dfdfdf;
   border: none;
   border-radius: 5px;
   cursor: pointer;
+}
+
+.link button span {
+  position: absolute;
+  bottom: -25px;
+  left: -14px;
+  color: #ffffff;
+  background-color: hsl(0, 0%, 65%);
+  border-radius: 3px;
+  padding: 4px;
+  animation: 3s ease-in 2s forwards disappear;
 }
 
 .socials {

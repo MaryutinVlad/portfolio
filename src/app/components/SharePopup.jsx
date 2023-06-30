@@ -6,18 +6,21 @@ import Image from "next/image"
 
 import { useState } from "react"
 
-export default function SharePopup({onScreenClick, isOpened}) {
+export default function SharePopup({onScreenClick}) {
 
+  const feedbackLink = 'http://www.adress.com'
   const [ isCopied, setIsCopied ] = useState(false)
 
   const closePopup = ({ target, currentTarget }) => {
     if (target === currentTarget) {
+      setIsCopied(false)
       onScreenClick()
     }
   }
 
   const handleCopyClick = () => {
-
+    navigator.clipboard.writeText(feedbackLink)
+    setIsCopied(true)
   }
 
   return (
@@ -30,19 +33,22 @@ export default function SharePopup({onScreenClick, isOpened}) {
             Share
           </p>
           <div className={styles.link}>
-            <span>http://www.adress.com</span>
+            <span>
+              {feedbackLink}
+            </span>
             <button
               type="button"
               onClick={handleCopyClick}
-            />
+            >
+              {
+                isCopied && (
+                  <span>
+                    COPIED
+                  </span>
+                )
+              }
+            </button>
           </div>
-          {
-            isCopied && (
-              <span>
-                COPIED
-              </span>
-            )
-          }
           <div className={styles.socials}>
             {
               socials.map((item) => {
