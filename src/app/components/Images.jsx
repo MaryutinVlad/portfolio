@@ -2,7 +2,7 @@
 
 import Image from "next/image"
 
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import styles from "../styles/images.module.css"
 
 import ImagePopup from "./ImagePopup"
@@ -19,9 +19,14 @@ export default function Images({
   const [ openPopup, setOpenPopup ] = useState(false)
   const [ imageOpened, setImageOpened ] = useState(null)
   const [ hasContent, setHasContent ] = useState(false)
+  const [ windowWidth, setwindowWidth ] = useState(window.innerWidth)
 
-  const galleryLayout = constructGallery(images, rowHeight, window.innerWidth * widthFactor, 7)
+  const galleryLayout = constructGallery(images, rowHeight, windowWidth * widthFactor, 7)
   const adjustedImages = galleryLayout.flat(1)
+
+  window.addEventListener('resize', () => {
+    setwindowWidth(window.innerWidth)
+  })
 
   const openImage = ({ target }) => {
     const { alt, width, height} = target
