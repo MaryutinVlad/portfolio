@@ -1,6 +1,6 @@
 'use client'
 
-import { useRouter, usePathname } from "next/navigation"
+import { useRouter } from "next/navigation"
 
 import NavigationLink from "./NavigationLink"
 import ShareButtons from "./ShareButtons"

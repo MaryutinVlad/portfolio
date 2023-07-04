@@ -2,7 +2,7 @@
 
 import Image from "next/image"
 
-import React, { useState, useEffect } from "react"
+import React, { useState } from "react"
 import styles from "../styles/images.module.css"
 
 import ImagePopup from "./ImagePopup"
@@ -86,17 +86,19 @@ export default function Images({
               ))}
             </div>
           ))
-        }<div style={hasContent ? { opacity: '1', transition: 'opacity .25s ease-in'} : {opacity: '0', transition: 'opacity .25s linear'}}>
-          {
-          openPopup && (
-            <ImagePopup
-              imageOpened={imageOpened}
-              onSwitchImage={switchImage}
-              onCloseImage={closeImageOnButton}
-              onScreenClick={closeOnScreenClick}
-            />
-          )
-        }</div>
+        }
+          <div style={hasContent ? { opacity: '1', transition: 'opacity .25s ease-in'} : {opacity: '0', transition: 'opacity .25s linear'}}>
+            {
+            openPopup && (
+              <ImagePopup
+                imageOpened={imageOpened}
+                onSwitchImage={switchImage}
+                onCloseImage={closeImageOnButton}
+                onScreenClick={closeOnScreenClick}
+              />
+            )
+          }
+        </div>
       </div>
   )
 }
