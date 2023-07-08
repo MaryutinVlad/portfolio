@@ -6,7 +6,6 @@ import imagesData from "../data/gallery.json"
 
 import importImages from "../helpers/importImages"
 
-import { title } from "../styles/home.module.css"
 import styles from "../styles/galleryPage.module.css"
 
 export default function Gallery() {
@@ -27,11 +26,7 @@ export default function Gallery() {
   return (
     <main>
       <h2
-        className={title}
-        style={{
-          marginLeft: '20px',
-          marginTop: '30px'
-        }}
+        className={styles.title}
       >
         Works
       </h2>
@@ -44,10 +39,6 @@ export default function Gallery() {
             >
               <p
                 className={styles.genre_title}
-                style={{
-                  letterSpacing: '6px',
-                  margin: '20px auto 0'
-                }}
                 onClick={resizeGenre}
               >
                 {genre.charAt(0).toUpperCase() + genre.slice(1)}

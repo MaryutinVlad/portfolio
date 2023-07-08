@@ -125,7 +125,7 @@
   }
 
   .header h1 {
-    margin: 5px auto 15px;
+    margin: 10px auto 20px;
   }
 
   .buttons {
@@ -140,6 +140,8 @@
     grid-template-rows: repeat(2, 1fr);
     grid-template-columns: repeat(2, 1fr);
     gap: 0;
+    border-top: 1px solid hsl(0, 0%, 71%);
+    
   }
 
   .navigation hr {

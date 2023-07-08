@@ -25,3 +25,13 @@
 .description::first-letter {
   margin-left: 10px;
 }
+
+@media screen and (max-width: 650px) {
+  .title {
+    margin: 10px auto auto auto;
+    font-size: 22px;
+    text-align: center;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+}

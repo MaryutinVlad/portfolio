@@ -1,3 +1,10 @@
+.title {
+  font-size: 26px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  margin: 30px auto 0 20px;
+}
+
 .genres {
   width: 100%;
   display: flex;
@@ -9,20 +16,32 @@
   width: 100%;
   display: flex;
   flex-wrap: wrap;
-  max-height: 1000px;
+  max-height: 3000px;
   overflow: hidden;
-  transition: max-height .8s ease-in-out;
+  transition: max-height .5s ease-in-out;
 }
 
 .genre_container_collapsed {
-  transition: max-height .8s ease-in-out;
+  transition: max-height .5s ease-in-out;
   max-height: 64px;
 }
 
 .genre_title {
-  letter-spacing: '6px';
-  margin: '20px auto 0';
+  letter-spacing: 6px;
+  margin: 20px auto 0;
   font-size: 26px;
   font-weight: 600;
   cursor: n-resize;
+}
+
+@media screen and (max-width: 650px) {
+  .title {
+    width: 100%;
+    text-align: center;
+    margin: 30px auto 0 auto;
+    font-size: 22px;
+    text-align: center;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
 }
