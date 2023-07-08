@@ -4,7 +4,7 @@ import { usePathname } from "next/navigation"
 
 import Link from "next/link"
 
-import { link, divider } from "../styles/header.module.css"
+import { link, divider, link_active } from "../styles/header.module.css"
 
 export default function NavigationLink({
   title,
@@ -15,7 +15,7 @@ export default function NavigationLink({
 
   return (
     <>
-      <div className={link}>
+      <div className={`${link} ${pathname === path && link_active}`}>
         <Link
           href={path}
         >
