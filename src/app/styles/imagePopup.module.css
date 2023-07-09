@@ -74,3 +74,18 @@
 .overlay_arrow:first-of-type {
   transform: rotate(180deg);
 }
+
+@media screen and (max-width: 650px) {
+
+  .overlay_arrow {
+    display: none;
+  }
+
+  .image_container {
+    margin: auto;
+  }
+
+  .overlay_close {
+    display: none;
+  }
+}

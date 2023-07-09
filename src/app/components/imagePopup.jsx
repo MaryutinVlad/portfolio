@@ -9,6 +9,8 @@ export default function ImagePopup({
   onScreenClick
 }) {
 
+  let touchStartX = 0
+
   function closeImage() {
     onCloseImage()
   }
@@ -21,10 +23,31 @@ export default function ImagePopup({
     onScreenClick(e)
   }
 
+  function onStartTouch(e) {
+    touchStartX = e.touches[0].clientX
+  }
+
+  function onEndTouch(e) {
+    const touchEndX = e.changedTouches[0].clientX
+
+    if (Math.abs(touchStartX - touchEndX) >= 150) {
+
+      if (touchStartX < touchEndX) {
+        return switchImage(1)
+      }
+
+      switchImage(-1)
+    }
+  }
+
+
   return (
     <div
       className={styles.overlay}
       onClick={closeOnScreenClick}
+      onDoubleClick={closeImage}
+      onTouchStart={onStartTouch}
+      onTouchEnd={onEndTouch}
     >
       <div
         className={styles.overlay_arrow}
@@ -35,7 +58,7 @@ export default function ImagePopup({
         <div className={styles.image_container}>
           <Image
             src={imageOpened.src}
-            alt={imageOpened.alt}
+            alt={imageOpened.title}
             width={imageOpened.width}
             height={imageOpened.height}
           />

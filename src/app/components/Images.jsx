@@ -29,19 +29,24 @@ export default function Images({
   })
 
   const openImage = ({ target }) => {
-    const { alt, width, height} = target
-    setOpenPopup(true)
+
+    const { alt } = target
     const imageToOpen = images.findIndex(item => alt === item.title)
-    setImageOpened(zoomImage(adjustedImages[imageToOpen], window.innerHeight * .8, width / height))
+
+    setOpenPopup(true)
+    setImageOpened(zoomImage(adjustedImages[imageToOpen]))
     setHasContent(true)
   }
 
-  function switchImage(direction) {
-    let imageToOpen = (adjustedImages.findIndex(item => imageOpened.alt === item.title) + direction) % images.length
+  const switchImage = (direction) => {
+
+    let imageToOpen = (adjustedImages.findIndex(item => imageOpened.title === item.title) + direction) % images.length
+    
     if (imageToOpen < 0) {
       imageToOpen = images.length - 1
     }
-    setImageOpened(zoomImage(adjustedImages[imageToOpen], window.innerHeight * .8))
+    
+    setImageOpened(zoomImage(adjustedImages[imageToOpen]))
   }
 
   const closeImage = () => {
