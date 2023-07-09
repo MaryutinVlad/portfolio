@@ -16,7 +16,11 @@ export default function ImagePopup({
   }
 
   function switchImage(direction) {
-    onSwitchImage(direction)
+    setToNext(true)
+    setTimeout(() => {
+      onSwitchImage(direction)
+      setToNext(false)
+    }, 300)
   }
 
   function closeOnScreenClick(e) {

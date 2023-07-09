@@ -19,6 +19,7 @@ export default function Images({
   const [ openPopup, setOpenPopup ] = useState(false)
   const [ imageOpened, setImageOpened ] = useState(null)
   const [ hasContent, setHasContent ] = useState(false)
+  const [ closestImages, setClosestImages ] = useState([])
   const [ windowWidth, setwindowWidth ] = useState(window.innerWidth)
 
   const galleryLayout = constructGallery(images, rowHeight, windowWidth * widthFactor, 7)
@@ -36,6 +37,21 @@ export default function Images({
     setOpenPopup(true)
     setImageOpened(zoomImage(adjustedImages[imageToOpen]))
     setHasContent(true)
+  }
+
+  const addClosestImages = () => {
+
+    const nextImageIndex = (adjustedImages.findIndex(item => imageOpened.title === item.title) + 1) % images.length
+    let prevImageIndex = (adjustedImages.findIndex(item => imageOpened.title === item.title) - 1) % images.length
+
+    if (prevImageIndex < 0) {
+      prevImageIndex = images.length - 1
+    }
+
+    const nextImage = zoomImage(adjustedImages[nextImageIndex])
+    const prevImage = zoomImage(adjustedImages[prevImageIndex])
+
+    setClosestImages([prevImage, nextImage])
   }
 
   const switchImage = (direction) => {
