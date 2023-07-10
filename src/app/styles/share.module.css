@@ -32,7 +32,7 @@
   border-radius: 10px;
   padding: 10px 20px;
   box-sizing: border-box;
-  width: 30%;
+  width: 500px;
 }
 
 .title {
@@ -88,4 +88,10 @@
 
 .socials img {
   cursor: pointer;
+}
+
+@media screen and (max-width: 650px) {
+  .container {
+    width: 400px;
+  }
 }
