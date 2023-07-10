@@ -17,9 +17,10 @@ export default function Images({
 }) {
 
   const [ openPopup, setOpenPopup ] = useState(false)
-  const [ imageOpened, setImageOpened ] = useState(null)
+  const [ prevImage, setPrevImage ] = useState(null)
+  const [ currentImage, setCurrentImage ] = useState(null)
+  const [ nextImage, setNextImage ] = useState(null)
   const [ hasContent, setHasContent ] = useState(false)
-  const [ closestImages, setClosestImages ] = useState([])
   const [ windowWidth, setwindowWidth ] = useState(window.innerWidth)
 
   const galleryLayout = constructGallery(images, rowHeight, windowWidth * widthFactor, 7)
@@ -29,45 +30,59 @@ export default function Images({
     setwindowWidth(window.innerWidth)
   })
 
-  const openImage = ({ target }) => {
+  const openImages = ({ target }) => {
 
     const { alt } = target
-    const imageToOpen = images.findIndex(item => alt === item.title)
-
-    setOpenPopup(true)
-    setImageOpened(zoomImage(adjustedImages[imageToOpen]))
-    setHasContent(true)
-  }
-
-  const addClosestImages = () => {
-
-    const nextImageIndex = (adjustedImages.findIndex(item => imageOpened.title === item.title) + 1) % images.length
-    let prevImageIndex = (adjustedImages.findIndex(item => imageOpened.title === item.title) - 1) % images.length
+    const currentImageIndex = images.findIndex(item => alt === item.title)
+    const nextImageIndex = (currentImageIndex + 1) % images.length
+    let prevImageIndex = (currentImageIndex - 1) % images.length
 
     if (prevImageIndex < 0) {
       prevImageIndex = images.length - 1
     }
 
-    const nextImage = zoomImage(adjustedImages[nextImageIndex])
-    const prevImage = zoomImage(adjustedImages[prevImageIndex])
-
-    setClosestImages([prevImage, nextImage])
+    setOpenPopup(true)
+    setPrevImage(zoomImage(adjustedImages[prevImageIndex]))
+    setCurrentImage(zoomImage(adjustedImages[currentImageIndex]))
+    setNextImage(zoomImage(adjustedImages[nextImageIndex]))
+    setHasContent(true)
   }
 
-  const switchImage = (direction) => {
+  const switchImage = (toNext) => {
 
-    let imageToOpen = (adjustedImages.findIndex(item => imageOpened.title === item.title) + direction) % images.length
+    if (toNext) {
+
+      const nextImageIndex = (adjustedImages.findIndex(item => nextImage.title === item.title) + 1) % images.length
+      
+      setPrevImage(currentImage)
+      setCurrentImage(nextImage)
+      setNextImage(zoomImage(adjustedImages[nextImageIndex]))
+
+      return
+    }
+
+    let prevImageIndex = (adjustedImages.findIndex(item => prevImage.title === item.title) - 1) % images.length
+
+    if (prevImageIndex < 0) {
+      prevImageIndex = images.length - 1
+    }
+
+    setPrevImage(zoomImage(adjustedImages[prevImageIndex]))
+    setCurrentImage(prevImage)
+    setNextImage(currentImage)
+
+    /*let imageToOpen = (adjustedImages.findIndex(item => imageOpened.title === item.title) + toNext) % images.length
     
     if (imageToOpen < 0) {
       imageToOpen = images.length - 1
     }
     
-    setImageOpened(zoomImage(adjustedImages[imageToOpen]))
+    setImageOpened(zoomImage(adjustedImages[imageToOpen]))*/
   }
 
   const closeImage = () => {
     setOpenPopup(false)
-    setImageOpened(null)
+    setCurrentImage(null)
   }
 
   const closeImageOnButton = () => {
@@ -101,7 +116,7 @@ export default function Images({
                   width={0}
                   height={0}
                   alt={item.title}
-                  onClick={openImage}
+                  onClick={openImages}
                   style={{ width: item.relativeWidth, height: 'auto' }}
                 />
               ))}
@@ -110,15 +125,17 @@ export default function Images({
         }
           <div style={hasContent ? { opacity: '1', transition: 'opacity .25s ease-in'} : {opacity: '0', transition: 'opacity .25s linear'}}>
             {
-            openPopup && (
-              <ImagePopup
-                imageOpened={imageOpened}
-                onSwitchImage={switchImage}
-                onCloseImage={closeImageOnButton}
-                onScreenClick={closeOnScreenClick}
-              />
-            )
-          }
+              openPopup && (
+                <ImagePopup
+                  prevImage={prevImage}
+                  currentImage={currentImage}
+                  nextImage={nextImage}
+                  onSwitchImage={switchImage}
+                  onCloseImage={closeImageOnButton}
+                  onScreenClick={closeOnScreenClick}
+                />
+              )
+            }
         </div>
       </div>
   )

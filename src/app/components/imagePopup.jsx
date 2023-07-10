@@ -3,7 +3,9 @@ import Image from "next/image"
 import styles from "../styles/imagePopup.module.css"
 
 export default function ImagePopup({
-  imageOpened,
+  prevImage,
+  currentImage,
+  nextImage,
   onSwitchImage,
   onCloseImage,
   onScreenClick
@@ -15,8 +17,8 @@ export default function ImagePopup({
     onCloseImage()
   }
 
-  function switchImage(direction) {
-    onSwitchImage(direction)
+  function switchImage(toNext) {
+    onSwitchImage(toNext)
   }
 
   function closeOnScreenClick(e) {
@@ -40,36 +42,34 @@ export default function ImagePopup({
     }
   }
 
-
   return (
     <div
       className={styles.overlay}
       onClick={closeOnScreenClick}
-      onDoubleClick={closeImage}
       onTouchStart={onStartTouch}
       onTouchEnd={onEndTouch}
     >
       <div
         className={styles.overlay_arrow}
-        onClick={() => switchImage(-1)}
+        onClick={() => switchImage(false)}
       >
         <button type="button"></button>
       </div>   
         <div className={styles.image_container}>
           <Image
-            src={imageOpened.src}
-            alt={imageOpened.title}
-            width={imageOpened.width}
-            height={imageOpened.height}
+            src={currentImage.src}
+            alt={currentImage.title}
+            width={currentImage.width}
+            height={currentImage.height}
           />
-          <p style={{ width: `${imageOpened.width}px` }}>
-            {imageOpened.description}
+          <p style={{ width: `${currentImage.width}px` }}>
+            {currentImage.description}
           </p>
         </div>
        
       <div
         className={styles.overlay_arrow}
-        onClick={() => switchImage(1)}
+        onClick={() => switchImage(true)}
       >
         <button type="button"></button>
       </div>

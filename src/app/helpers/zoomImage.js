@@ -19,7 +19,7 @@ export default function zoomImage(image) {
     return {
       ...image,
       width: window.innerWidth * shrinkFactor,
-      height: window.innerWidth * shrinkFactor * ratio
+      height: window.innerWidth * shrinkFactor * ratio,
     }
   }
 
@@ -28,13 +28,13 @@ export default function zoomImage(image) {
     return {
       ...image,
       width: window.innerWidth * .9,
-      height: window.innerWidth * .9 * ratio
+      height: window.innerWidth * .9 * ratio,
     }
   }
 
   return {
     ...image,
     width: window.innerHeight * .8 * ratio,
-    height: window.innerHeight * .8
+    height: window.innerHeight * .8,
   }
 }
