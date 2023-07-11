@@ -28,17 +28,36 @@
 
 .genre_title {
   letter-spacing: 6px;
-  margin: 20px auto 0;
+  margin: 20px 0 0 auto;
   font-size: 26px;
   font-weight: 600;
-  cursor: n-resize;
+}
+
+.genre_resize {
+  width: 23px;
+  height: 23px;
+  margin: 22px auto 0 10px;
+  border: none;
+  cursor: pointer;
+  background-image: url('../../../public/icons/collapse.svg');
+  background-color: transparent;
+  background-size: cover;
+}
+
+.genre_resize_collapsed {
+  width: 23px;
+  height: 23px;
+  margin: 22px auto 0 10px;
+  border: none;
+  cursor: pointer;
+  background-image: url('../../../public/icons/expand.svg');
+  background-color: transparent;
+  background-size: cover;
 }
 
 @media screen and (max-width: 650px) {
   .title {
-    width: 100%;
-    text-align: center;
-    margin: 30px auto 0 auto;
+    margin: 30px auto 10px;
     font-size: 22px;
     text-align: center;
     text-decoration: underline;

@@ -1,23 +1,6 @@
-@font-face {
-  font-family: 'mermaid';
-  src: url('../../../public/fonts/Mermaid1001.ttf');
-}
-
-@font-face {
-  font-family: 'raleway-light';
-  src: url('../../../public//fonts/Raleway-Light.ttf');
-}
-
-@font-face {
-  font-family: 'raleway-regular';
-  src: url('../../../public/fonts/Raleway-Regular.ttf');
-}
-
 :root {
-  background-color: hsl(0, 0%, 91%);
   color: hsl(0, 0%, 18%);
   padding: 5px 40px 0;
-  font-family: 'raleway-light';
 }
 
 @media screen and (max-width: 650px) {

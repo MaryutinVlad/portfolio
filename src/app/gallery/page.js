@@ -14,6 +14,7 @@ export default function Gallery() {
 
   const resizeGenre = (e) => {
     e.target.closest('div').classList.toggle(styles.genre_container_collapsed)
+    e.target.classList.toggle(styles.genre_resize_collapsed)
   }
 
   const Gallery = dynamic(
@@ -37,12 +38,14 @@ export default function Gallery() {
               key={genre}
               className={styles.genre_container}
             >
-              <p
-                className={styles.genre_title}
-                onClick={resizeGenre}
-              >
+              <p className={styles.genre_title}>
                 {genre.charAt(0).toUpperCase() + genre.slice(1)}
               </p>
+              <button
+                className={styles.genre_resize}
+                onClick={resizeGenre}
+              >
+              </button>
               <Gallery
                 images={genres[genre]}
                 rowHeight={300}

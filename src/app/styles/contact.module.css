@@ -5,21 +5,9 @@
   left: 0;
   right: 0;
   z-index: -1;
-  /*background-image: url('../../../public/gallery/background.jpg');*/
   background-repeat: no-repeat;
   background-size: cover;
 }
-/*
-.second_overlay {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background-image: radial-gradient(ellipse at top left, rgba(233, 233, 233, .8) 0%, rgba(233, 233, 233, .1) 25%, rgba(233, 233, 233, .4) 40%, rgba(233, 233, 233, 1) 65%);
-  z-index: 0;
-}
-*/
 .container {
   font-weight: lighter;
   color: #545454;
@@ -121,7 +109,6 @@
   font-size: 17px;
   font-weight: 700;
   letter-spacing: 2px;
-  font-family: 'raleway-light';
   color: #fffdfc;
   background: #4b4b4b;
   transition: text-shadow .5s linear;
