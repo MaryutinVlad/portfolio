@@ -17,9 +17,7 @@ export default function Images({
 }) {
 
   const [ openPopup, setOpenPopup ] = useState(false)
-  const [ prevImage, setPrevImage ] = useState(null)
   const [ currentImage, setCurrentImage ] = useState(null)
-  const [ nextImage, setNextImage ] = useState(null)
   const [ hasContent, setHasContent ] = useState(false)
   const [ windowWidth, setwindowWidth ] = useState(window.innerWidth)
 
@@ -30,54 +28,25 @@ export default function Images({
     setwindowWidth(window.innerWidth)
   })
 
-  const openImages = ({ target }) => {
+  const openImage = ({ target }) => {
 
     const { alt } = target
     const currentImageIndex = images.findIndex(item => alt === item.title)
-    const nextImageIndex = (currentImageIndex + 1) % images.length
-    let prevImageIndex = (currentImageIndex - 1) % images.length
-
-    if (prevImageIndex < 0) {
-      prevImageIndex = images.length - 1
-    }
 
     setOpenPopup(true)
-    setPrevImage(zoomImage(adjustedImages[prevImageIndex]))
     setCurrentImage(zoomImage(adjustedImages[currentImageIndex]))
-    setNextImage(zoomImage(adjustedImages[nextImageIndex]))
     setHasContent(true)
   }
 
-  const switchImage = (toNext) => {
+  const switchImage = (direction) => {
 
-    if (toNext) {
+    let imageToOpenIndex = (adjustedImages.findIndex(item => currentImage.title === item.title) + direction) % images.length
 
-      const nextImageIndex = (adjustedImages.findIndex(item => nextImage.title === item.title) + 1) % images.length
-      
-      setPrevImage(currentImage)
-      setCurrentImage(nextImage)
-      setNextImage(zoomImage(adjustedImages[nextImageIndex]))
-
-      return
+    if (imageToOpenIndex < 0) {
+      imageToOpenIndex = images.length - 1
     }
 
-    let prevImageIndex = (adjustedImages.findIndex(item => prevImage.title === item.title) - 1) % images.length
-
-    if (prevImageIndex < 0) {
-      prevImageIndex = images.length - 1
-    }
-
-    setPrevImage(zoomImage(adjustedImages[prevImageIndex]))
-    setCurrentImage(prevImage)
-    setNextImage(currentImage)
-
-    /*let imageToOpen = (adjustedImages.findIndex(item => imageOpened.title === item.title) + toNext) % images.length
-    
-    if (imageToOpen < 0) {
-      imageToOpen = images.length - 1
-    }
-    
-    setImageOpened(zoomImage(adjustedImages[imageToOpen]))*/
+    setCurrentImage(zoomImage(adjustedImages[imageToOpenIndex]))
   }
 
   const closeImage = () => {
@@ -116,7 +85,7 @@ export default function Images({
                   width={0}
                   height={0}
                   alt={item.title}
-                  onClick={openImages}
+                  onClick={openImage}
                   style={{ width: item.relativeWidth, height: 'auto' }}
                 />
               ))}
@@ -127,9 +96,7 @@ export default function Images({
             {
               openPopup && (
                 <ImagePopup
-                  prevImage={prevImage}
                   currentImage={currentImage}
-                  nextImage={nextImage}
                   onSwitchImage={switchImage}
                   onCloseImage={closeImageOnButton}
                   onScreenClick={closeOnScreenClick}

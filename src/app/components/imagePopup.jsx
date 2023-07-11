@@ -3,9 +3,7 @@ import Image from "next/image"
 import styles from "../styles/imagePopup.module.css"
 
 export default function ImagePopup({
-  prevImage,
   currentImage,
-  nextImage,
   onSwitchImage,
   onCloseImage,
   onScreenClick
@@ -17,8 +15,8 @@ export default function ImagePopup({
     onCloseImage()
   }
 
-  function switchImage(toNext) {
-    onSwitchImage(toNext)
+  function switchImage(direction) {
+    onSwitchImage(direction)
   }
 
   function closeOnScreenClick(e) {
@@ -51,7 +49,7 @@ export default function ImagePopup({
     >
       <div
         className={styles.overlay_arrow}
-        onClick={() => switchImage(false)}
+        onClick={() => switchImage(-1)}
       >
         <button type="button"></button>
       </div>   
@@ -69,7 +67,7 @@ export default function ImagePopup({
        
       <div
         className={styles.overlay_arrow}
-        onClick={() => switchImage(true)}
+        onClick={() => switchImage(1)}
       >
         <button type="button"></button>
       </div>

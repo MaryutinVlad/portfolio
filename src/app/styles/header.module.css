@@ -10,7 +10,7 @@
 .header h1 {
   font-size: 26px;
   cursor: pointer;
-  margin: 0 50px auto 0;
+  margin: 5px 50px auto 0;
   z-index: 1;
   font-family: 'mermaid';
 }
@@ -41,7 +41,7 @@
   transition-property: border-color width;
   transition-duration: .7s;
   transition-timing-function: linear;
-  width: 0;
+  width: 1px;
   margin-top: 0;
   border-color: transparent;
   border-top: none;
