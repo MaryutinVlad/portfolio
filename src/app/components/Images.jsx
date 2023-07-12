@@ -33,8 +33,8 @@ export default function Images({
     const { alt } = target
     const currentImageIndex = images.findIndex(item => alt === item.title)
 
-    setOpenPopup(true)
     setCurrentImage(zoomImage(adjustedImages[currentImageIndex]))
+    setOpenPopup(true)
     setHasContent(true)
   }
 
@@ -44,7 +44,7 @@ export default function Images({
 
     if (imageToOpenIndex < 0) {
       imageToOpenIndex = images.length - 1
-    }
+    } 
 
     setCurrentImage(zoomImage(adjustedImages[imageToOpenIndex]))
   }

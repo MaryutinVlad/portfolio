@@ -1,0 +1,38 @@
+{
+  "graphics": [
+    {
+      "title": "g1",
+      "src": "g1.jpg",
+      "description": ""
+    },
+    {
+      "title": "g2",
+      "src": "g2.jpg",
+      "description": ""
+    }
+  ],
+  "painting": [
+    {
+      "title": "p1",
+      "src": "p1.jpg",
+      "description": ""
+    },
+    {
+      "title": "p2",
+      "src": "p2.jpg",
+      "description": ""
+    }
+  ],
+  "sketches": [
+    {
+      "title": "s1",
+      "src": "s1.jpg",
+      "description": ""
+    },
+    {
+      "title": "s2",
+      "src": "s2.jpg",
+      "description": ""
+    }
+  ]
+}

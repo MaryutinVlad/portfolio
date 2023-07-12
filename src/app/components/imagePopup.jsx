@@ -58,13 +58,11 @@ export default function ImagePopup({
             src={currentImage.src}
             alt={currentImage.title}
             width={currentImage.width}
-            height={currentImage.height}
           />
           <p style={{ width: `${currentImage.width}px` }}>
             {currentImage.description}
           </p>
         </div>
-       
       <div
         className={styles.overlay_arrow}
         onClick={() => switchImage(1)}
