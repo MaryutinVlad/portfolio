@@ -78,8 +78,8 @@
 }
 
 .inputField {
-  outline-style: none;
   border: none;
+  outline-style: none;
   font-size: 20px;
   font-weight: 100;
   padding: 10px 5px;

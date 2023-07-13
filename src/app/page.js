@@ -11,7 +11,7 @@ import importImages from "./helpers/importImages"
 
 export default function Home() {
 
-  const images = importImages(imagesData, true, 2)
+  const images = importImages(imagesData, true, 4)
 
   const Gallery = dynamic(
     () => {

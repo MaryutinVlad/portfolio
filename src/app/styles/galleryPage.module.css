@@ -18,11 +18,11 @@
   flex-wrap: wrap;
   max-height: 10000px;
   overflow: hidden;
-  transition: max-height .5s ease-in-out;
+  transition: max-height .75s ease-in-out;
 }
 
 .genre_container_collapsed {
-  transition: max-height .5s ease-in-out;
+  transition: max-height .75s ease-in-out;
   max-height: 64px;
 }
 
@@ -31,6 +31,7 @@
   margin: 20px 0 0 auto;
   font-size: 26px;
   font-weight: 600;
+  z-index: 1;
 }
 
 .genre_resize {
