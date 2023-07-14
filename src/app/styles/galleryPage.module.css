@@ -16,7 +16,7 @@
   width: 100%;
   display: flex;
   flex-wrap: wrap;
-  max-height: 10000px;
+  max-height: 20000px;
   overflow: hidden;
   transition: max-height .75s ease-in-out;
 }
