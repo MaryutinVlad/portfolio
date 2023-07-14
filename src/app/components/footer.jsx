@@ -1,24 +1,26 @@
+"use client"
+
 import { footer } from "../styles/footer.module.css"
 
-import data from "../data/footer.json"
-
-import IconButton from "./icon-button"
+import ShareButtons from "./ShareButtons"
 
 export default function Footer() {
+
+  const toTop = () => {
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: 'smooth'
+    })
+  }
+
   return (
     <footer className={footer}>
-      <div>
-        {
-          data.icons.map(({title, size}) => (
-            <IconButton
-              key={title}
-              title={title}
-              size={size}
-            />
-          ))
-        }
-      </div>
-      <h3>
+      <ShareButtons
+        size={[20, 24]}
+        gap={20}
+      />
+      <h3 onClick={toTop}>
         Header alley
       </h3>
       <span>

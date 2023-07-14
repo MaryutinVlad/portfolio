@@ -1,0 +1,23 @@
+.gallery {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin: 20px auto;
+  gap: 7px;
+}
+
+.row {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  gap: 7px;
+  justify-content: center;
+}
+
+.image {
+  cursor: pointer;
+}
+
+.image:hover {
+  opacity: .9;
+}

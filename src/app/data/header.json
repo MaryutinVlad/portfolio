@@ -1,14 +1,4 @@
 {
-  "icons": [
-    {
-      "title": "search",
-      "size": 30
-    },
-    {
-      "title": "instagram",
-      "size": 30
-    }
-  ],
   "links": [
     {
       "title": "Home",
@@ -17,10 +7,6 @@
     {
       "title": "Gallery",
       "path": "/gallery"
-    },
-    {
-      "title": "About",
-      "path": "/about"
     },
     {
       "title": "Contact",

@@ -5,6 +5,7 @@
   flex-direction: row;
   align-items: center;
   color: rgb(66, 65, 64);
+  z-index: 1;
 }
 
 .footer div {
@@ -12,19 +13,24 @@
   flex-direction: row;
   gap: 20px;
   cursor: pointer;
+  z-index: 1;
 }
 
 .footer h3 {
+  cursor: pointer;
+  margin-bottom: 30px;
   margin-left: 30px;
   font-size: 16px;
   font-weight: 200;
   letter-spacing: .8px;
+  z-index: 1;
 }
 
 .footer span {
-  margin-top: 3px;
+  margin-bottom: 15px;
   margin-left: 15px;
   font-size: 15px;
   font-weight: 200;
   letter-spacing: .8px;
+  z-index: 1;
 }

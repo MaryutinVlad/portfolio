@@ -1,0 +1,112 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, .8);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 2;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.content_image_next {
+  opacity: 0;
+  transform-origin: center;
+  transform: translateX(100px) scale(.9);
+  transition: transform .3s ease-in-out;
+}
+
+.content_image_loaded {
+  opacity: 1;
+  transform-origin: center;
+  transform: translateX(0) scale(1);
+  transition: transform .3s ease-in-out;
+}
+
+.content_image_prev {
+  opacity: 0;
+  transform-origin: center;
+  transform: translateX(-100px) scale(.9);
+  transition: transform .3s ease-in-out;
+}
+
+.content_text {
+  color: #e9e9e9;
+  text-align: justify;
+}
+
+.overlay_close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  transition: transform .3s linear;
+  background-image: url('../../../public/icons/close.svg');
+  background-size: cover;
+  background-color: transparent;
+  border: none;
+}
+
+.overlay_close:hover {
+  transition: transform .3s linear;
+  transform: scale(1.1);
+}
+
+.overlay_arrow {
+  width: 50px;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 90px 0 0 90px;
+  transition: background-color .3s linear;
+  cursor: pointer;
+  background-color: transparent;
+}
+
+.overlay_arrow button {
+  width: 40px;
+  height: 40px;
+  background-image: url('../../../public/icons/arrow.svg');
+  background-size: cover;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  border: none;
+}
+
+.overlay_arrow:hover {
+  transition: background-color .3s linear;
+  background-color: rgba(237, 233, 233, .2);
+}
+
+.overlay_arrow:first-of-type {
+  transform: rotate(180deg);
+}
+
+@media screen and (max-width: 650px) {
+
+  .overlay_arrow {
+    display: none;
+  }
+
+  .content {
+    margin: auto;
+  }
+
+  .overlay_close {
+    opacity: .5;
+  }
+}
