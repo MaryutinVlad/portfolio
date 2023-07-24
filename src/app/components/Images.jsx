@@ -84,6 +84,7 @@ export default function Images({
                   src={item.src}
                   width={0}
                   height={0}
+                  placeholder="blur"
                   alt={item.title}
                   onClick={openImage}
                   style={{ width: item.relativeWidth, height: 'auto' }}

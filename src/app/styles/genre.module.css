@@ -1,0 +1,43 @@
+.genre_container {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  max-height: 20000px;
+  overflow: hidden;
+  transition: max-height .75s ease-in-out;
+}
+
+.genre_container_collapsed {
+  transition: max-height .75s ease-in-out;
+  max-height: 64px;
+}
+
+.genre_title {
+  letter-spacing: 6px;
+  margin: 20px 0 0 auto;
+  font-size: 26px;
+  font-weight: 600;
+  z-index: 1;
+}
+
+.genre_resize {
+  width: 23px;
+  height: 23px;
+  margin: 22px auto 0 10px;
+  border: none;
+  cursor: pointer;
+  background-image: url('../../../public/icons/collapse.svg');
+  background-color: transparent;
+  background-size: cover;
+}
+
+.genre_resize_collapsed {
+  width: 23px;
+  height: 23px;
+  margin: 22px auto 0 10px;
+  border: none;
+  cursor: pointer;
+  background-image: url('../../../public/icons/expand.svg');
+  background-color: transparent;
+  background-size: cover;
+}

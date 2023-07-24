@@ -4,13 +4,13 @@ export default function importImages(gallery, mixed = false, limit = 0) {
 
     for (let genre in gallery) {
 
-      const itemsPerGenre = limit ? limit : gallery[genre].length
+      const imagesPerGenre = limit ? limit : gallery[genre].length
 
       if (!mixed) {
         images[genre] = []
       }
   
-      for (let ind = 0; ind < itemsPerGenre; ind++) {
+      for (let ind = 0; ind < imagesPerGenre; ind++) {
   
         (mixed ? images : images[genre]).push({
           ...gallery[genre][ind],
@@ -19,6 +19,5 @@ export default function importImages(gallery, mixed = false, limit = 0) {
       }
     }
     
-  
   return images
 }

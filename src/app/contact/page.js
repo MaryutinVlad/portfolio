@@ -72,10 +72,10 @@ export default function Contact() {
         </h3>
         <div className={styles.upperFields}>
           <input type="text" name="firstName" className={styles.inputField} ref={firstNameRef} required/>
-          <input type="text" name="lastName" className={styles.inputField} ref={lastNameRef} required/>
           <label htmlFor="firstName">
             First Name
           </label>
+          <input type="text" name="lastName" className={styles.inputField} ref={lastNameRef} required/>
           <label htmlFor="lastName">
             Last Name
           </label>

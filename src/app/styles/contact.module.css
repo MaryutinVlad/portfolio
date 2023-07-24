@@ -68,6 +68,7 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(2, 1fr);
+  grid-auto-flow: column;
   gap: 2px 20px;
 }
 
@@ -82,9 +83,15 @@
   outline-style: none;
   font-size: 20px;
   font-weight: 100;
-  padding: 10px 5px;
+  box-sizing: border-box;
+  padding: 10px 10px;
   color: #545454;
   width: 100%;
+}
+
+.upperFields .inputField {
+  border-left: 1px solid #4b4b4b;
+  border-radius: 10px;
 }
 
 .lowerFields {
@@ -92,6 +99,17 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
+}
+
+.lowerFields input {
+  border-bottom: 1px solid #4b4b4b;
+  border-radius: 10px;
+}
+
+.lowerFields textarea {
+  border-left: 1px solid #4b4b4b;
+  border-right: 1px solid #4b4b4b;
+  border-radius: 10px;
 }
 
 .lowerFields label {
