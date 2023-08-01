@@ -1,1 +1,383 @@
-{"graphics":[{"src":"g1.jpg","title":"graphics1","description":""},{"src":"g10.jpg","title":"graphics2","description":""},{"src":"g11.jpg","title":"graphics3","description":""},{"src":"g12.jpg","title":"graphics4","description":""},{"src":"g13.jpg","title":"graphics5","description":""},{"src":"g14.jpg","title":"graphics6","description":""},{"src":"g15.jpg","title":"graphics7","description":""},{"src":"g16.jpg","title":"graphics8","description":""},{"src":"g17.jpg","title":"graphics9","description":""},{"src":"g18.jpg","title":"graphics10","description":""},{"src":"g19.jpg","title":"graphics11","description":""},{"src":"g2.jpg","title":"graphics12","description":""},{"src":"g20.jpg","title":"graphics13","description":""},{"src":"g21.jpg","title":"graphics14","description":""},{"src":"g22.jpg","title":"graphics15","description":""},{"src":"g23.jpg","title":"graphics16","description":""},{"src":"g24.jpg","title":"graphics17","description":""},{"src":"g3.jpg","title":"graphics18","description":""},{"src":"g4.jpg","title":"graphics19","description":""},{"src":"g5.jpg","title":"graphics20","description":""},{"src":"g6.jpg","title":"graphics21","description":""},{"src":"g7.jpg","title":"graphics22","description":""},{"src":"g8.jpg","title":"graphics23","description":""},{"src":"g9.jpg","title":"graphics24","description":""}],"painting":[{"src":"p1.jpg","title":"painting1","description":""},{"src":"p10.jpg","title":"painting2","description":""},{"src":"p11.jpg","title":"painting3","description":""},{"src":"p12.jpg","title":"painting4","description":""},{"src":"p13.jpg","title":"painting5","description":""},{"src":"p14.jpg","title":"painting6","description":""},{"src":"p15.jpg","title":"painting7","description":""},{"src":"p16.jpg","title":"painting8","description":""},{"src":"p17.jpg","title":"painting9","description":""},{"src":"p18.jpg","title":"painting10","description":""},{"src":"p19.jpg","title":"painting11","description":""},{"src":"p2.jpg","title":"painting12","description":""},{"src":"p20.jpg","title":"painting13","description":""},{"src":"p21.jpg","title":"painting14","description":""},{"src":"p22.jpg","title":"painting15","description":""},{"src":"p23.jpg","title":"painting16","description":""},{"src":"p24.jpg","title":"painting17","description":""},{"src":"p25.jpg","title":"painting18","description":""},{"src":"p26.jpg","title":"painting19","description":""},{"src":"p27.jpg","title":"painting20","description":""},{"src":"p28.jpg","title":"painting21","description":""},{"src":"p29.jpg","title":"painting22","description":""},{"src":"p3.jpg","title":"painting23","description":""},{"src":"p30.jpg","title":"painting24","description":""},{"src":"p31.jpg","title":"painting25","description":""},{"src":"p32.jpg","title":"painting26","description":""},{"src":"p33.jpg","title":"painting27","description":""},{"src":"p34.jpg","title":"painting28","description":""},{"src":"p35.jpg","title":"painting29","description":""},{"src":"p36.jpg","title":"painting30","description":""},{"src":"p4.jpg","title":"painting31","description":""},{"src":"p5.jpg","title":"painting32","description":""},{"src":"p6.jpg","title":"painting33","description":""},{"src":"p7.jpg","title":"painting34","description":""},{"src":"p8.jpg","title":"painting35","description":""},{"src":"p9.jpg","title":"painting36","description":""}],"sketches":[{"src":"s1.jpg","title":"sketches1","description":""},{"src":"s10.jpg","title":"sketches2","description":""},{"src":"s11.jpg","title":"sketches3","description":""},{"src":"s12.jpg","title":"sketches4","description":""},{"src":"s13.jpg","title":"sketches5","description":""},{"src":"s14.jpg","title":"sketches6","description":""},{"src":"s2.jpg","title":"sketches7","description":""},{"src":"s3.jpg","title":"sketches8","description":""},{"src":"s4.jpg","title":"sketches9","description":""},{"src":"s5.jpg","title":"sketches10","description":""},{"src":"s6.jpg","title":"sketches11","description":""},{"src":"s7.jpg","title":"sketches12","description":""},{"src":"s8.jpg","title":"sketches13","description":""},{"src":"s9.jpg","title":"sketches14","description":""}]}
+{
+  "graphics": [
+    {
+      "title": "g1",
+      "src": "/graphics/g1.jpg",
+      "description": ""
+    },
+    {
+      "title": "g2",
+      "src": "/graphics/g2.jpg",
+      "description": ""
+    },
+    {
+      "title": "g3",
+      "src": "/graphics/g3.jpg",
+      "description": ""
+    },
+    {
+      "title": "g4",
+      "src": "/graphics/g4.jpg",
+      "description": ""
+    },
+    {
+      "title": "g5",
+      "src": "/graphics/g5.jpg",
+      "description": ""
+    },
+    {
+      "title": "g6",
+      "src": "/graphics/g6.jpg",
+      "description": ""
+    },
+    {
+      "title": "g7",
+      "src": "/graphics/g7.jpg",
+      "description": ""
+    },
+    {
+      "title": "g8",
+      "src": "/graphics/g8.jpg",
+      "description": ""
+    },
+    {
+      "title": "g9",
+      "src": "/graphics/g9.jpg",
+      "description": ""
+    },
+    {
+      "title": "g10",
+      "src": "/graphics/g10.jpg",
+      "description": ""
+    },
+    {
+      "title": "g11",
+      "src": "/graphics/g11.jpg",
+      "description": ""
+    },
+    {
+      "title": "g12",
+      "src": "/graphics/g12.jpg",
+      "description": ""
+    },
+    {
+      "title": "g13",
+      "src": "/graphics/g13.jpg",
+      "description": ""
+    },
+    {
+      "title": "g14",
+      "src": "/graphics/g14.jpg",
+      "description": ""
+    },
+    {
+      "title": "g15",
+      "src": "/graphics/g15.jpg",
+      "description": ""
+    },
+    {
+      "title": "g16",
+      "src": "/graphics/g16.jpg",
+      "description": ""
+    },
+    {
+      "title": "g17",
+      "src": "/graphics/g17.jpg",
+      "description": ""
+    },
+    {
+      "title": "g18",
+      "src": "/graphics/g18.jpg",
+      "description": ""
+    },
+    {
+      "title": "g19",
+      "src": "/graphics/g19.jpg",
+      "description": ""
+    },
+    {
+      "title": "g20",
+      "src": "/graphics/g20.jpg",
+      "description": ""
+    },
+    {
+      "title": "g21",
+      "src": "/graphics/g21.jpg",
+      "description": ""
+    },
+    {
+      "title": "g22",
+      "src": "/graphics/g22.jpg",
+      "description": ""
+    },
+    {
+      "title": "g23",
+      "src": "/graphics/g23.jpg",
+      "description": ""
+    },
+    {
+      "title": "g24",
+      "src": "/graphics/g24.jpg",
+      "description": ""
+    },
+    {
+      "title": "g25",
+      "src": "/graphics/g25.jpg",
+      "description": ""
+    },
+    {
+      "title": "g26",
+      "src": "/graphics/g26.jpg",
+      "description": ""
+    },
+    {
+      "title": "g27",
+      "src": "/graphics/g27.jpg",
+      "description": ""
+    },
+    {
+      "title": "g28",
+      "src": "/graphics/g28.jpg",
+      "description": ""
+    },
+    {
+      "title": "g29",
+      "src": "/graphics/g29.jpg",
+      "description": ""
+    },
+    {
+      "title": "g30",
+      "src": "/graphics/g30.jpg",
+      "description": ""
+    },
+    {
+      "title": "g31",
+      "src": "/graphics/g31.jpg",
+      "description": ""
+    },
+    {
+      "title": "g32",
+      "src": "/graphics/g32.jpg",
+      "description": ""
+    },
+    {
+      "title": "g33",
+      "src": "/graphics/g33.jpg",
+      "description": ""
+    },
+    {
+      "title": "g34",
+      "src": "/graphics/g34.jpg",
+      "description": ""
+    },
+    {
+      "title": "g35",
+      "src": "/graphics/g35.jpg",
+      "description": ""
+    },
+    {
+      "title": "g36",
+      "src": "/graphics/g36.jpg",
+      "description": ""
+    },
+    {
+      "title": "g37",
+      "src": "/graphics/g37.jpg",
+      "description": ""
+    },
+    {
+      "title": "g38",
+      "src": "/graphics/g38.jpg",
+      "description": ""
+    },
+    {
+      "title": "g39",
+      "src": "/graphics/g39.jpg",
+      "description": ""
+    },
+    {
+      "title": "g40",
+      "src": "/graphics/g40.jpg",
+      "description": ""
+    },
+    {
+      "title": "g41",
+      "src": "/graphics/g41.jpg",
+      "description": ""
+    },
+    {
+      "title": "g42",
+      "src": "/graphics/g42.jpg",
+      "description": ""
+    },
+    {
+      "title": "g43",
+      "src": "/graphics/g43.jpg",
+      "description": ""
+    },
+    {
+      "title": "g44",
+      "src": "/graphics/g44.jpg",
+      "description": ""
+    },
+    {
+      "title": "g45",
+      "src": "/graphics/g45.jpg",
+      "description": ""
+    },
+    {
+      "title": "g46",
+      "src": "/graphics/g46.jpg",
+      "description": ""
+    },
+    {
+      "title": "g47",
+      "src": "/graphics/g47.jpg",
+      "description": ""
+    },
+    {
+      "title": "g48",
+      "src": "/graphics/g48.jpg",
+      "description": ""
+    },
+    {
+      "title": "g49",
+      "src": "/graphics/g49.jpg",
+      "description": ""
+    },
+    {
+      "title": "g50",
+      "src": "/graphics/g50.jpg",
+      "description": ""
+    },
+    {
+      "title": "g51",
+      "src": "/graphics/g51.jpg",
+      "description": ""
+    },
+    {
+      "title": "g52",
+      "src": "/graphics/g52.jpg",
+      "description": ""
+    },
+    {
+      "title": "g53",
+      "src": "/graphics/g53.jpg",
+      "description": ""
+    },
+    {
+      "title": "g54",
+      "src": "/graphics/g54.jpg",
+      "description": ""
+    },
+    {
+      "title": "g55",
+      "src": "/graphics/g55.jpg",
+      "description": ""
+    },
+    {
+      "title": "g56",
+      "src": "/graphics/g56.jpg",
+      "description": ""
+    },
+    {
+      "title": "g57",
+      "src": "/graphics/g57.jpg",
+      "description": ""
+    },
+    {
+      "title": "g58",
+      "src": "/graphics/g58.jpg",
+      "description": ""
+    },
+    {
+      "title": "g59",
+      "src": "/graphics/g59.jpg",
+      "description": ""
+    },
+    {
+      "title": "g60",
+      "src": "/graphics/g60.jpg",
+      "description": ""
+    },
+    {
+      "title": "g61",
+      "src": "/graphics/g61.jpg",
+      "description": ""
+    },
+    {
+      "title": "g62",
+      "src": "/graphics/g62.jpg",
+      "description": ""
+    },
+    {
+      "title": "g63",
+      "src": "/graphics/g63.jpg",
+      "description": ""
+    },
+    {
+      "title": "g64",
+      "src": "/graphics/g64.jpg",
+      "description": ""
+    },
+    {
+      "title": "g65",
+      "src": "/graphics/g65.jpg",
+      "description": ""
+    },
+    {
+      "title": "g66",
+      "src": "/graphics/g66.jpg",
+      "description": ""
+    },
+    {
+      "title": "g67",
+      "src": "/graphics/g67.jpg",
+      "description": ""
+    },
+    {
+      "title": "g68",
+      "src": "/graphics/g68.jpg",
+      "description": ""
+    },
+    {
+      "title": "g69",
+      "src": "/graphics/g69.jpg",
+      "description": ""
+    },
+    {
+      "title": "g70",
+      "src": "/graphics/g70.jpg",
+      "description": ""
+    },
+    {
+      "title": "g71",
+      "src": "/graphics/g71.jpg",
+      "description": ""
+    }
+  ],
+  "painting": [
+    {
+      "title": "p1",
+      "src": "/paintings/p1.jpg",
+      "description": ""
+    },
+    {
+      "title": "p2",
+      "src": "/paintings/p2.jpg",
+      "description": ""
+    }
+  ],
+  "sketches": [
+    {
+      "title": "s1",
+      "src": "/sketches/s1.jpg",
+      "description": ""
+    },
+    {
+      "title": "s2",
+      "src": "/sketches/s2.jpg",
+      "description": ""
+    }
+  ]
+}
